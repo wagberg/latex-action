@@ -18,9 +18,9 @@ args="$4"
 extra_packages="$5"
 extra_system_packages="$6"
 
-if [ -z "$root_file" ]; then
-  error "Input 'root_file' is missing."
-fi
+# if [ -z "$root_file" ]; then
+#   error "Input 'root_file' is missing."
+# fi
 
 if [ -z "$compiler" ] && [ -z "$args" ]; then
   warn "Input 'compiler' and 'args' are both empty. Reset them to default values."
@@ -43,9 +43,9 @@ if [ -n "$working_directory" ]; then
   cd "$working_directory"
 fi
 
-if [ ! -f "$root_file" ]; then
-  error "File '$root_file' cannot be found from the directory '$PWD'."
-fi
+# if [ ! -f "$root_file" ]; then
+#   error "File '$root_file' cannot be found from the directory '$PWD'."
+# fi
 
 # shellcheck disable=SC2086
 "$compiler" $args "$root_file"
